@@ -5,8 +5,6 @@ TABLE_HEIGHT = 8
 
 CELL_MAPPING = {};
 
-var table = document.getElementById("code_table")
-
 var onChangeListener = function(e) {
 	var orig = e.target.getAttribute('data-orig-value');
   for (var cell in CELL_MAPPING[orig]) {
@@ -14,20 +12,26 @@ var onChangeListener = function(e) {
   }
 }
 
-for (y = 0; y < TABLE_HEIGHT; y++) {
-	var row = table.insertRow(y);
-  for (x = 0; x < TABLE_WIDTH; x++) {
-  	var cell = row.insertCell(x);
-    var input = document.createElement('INPUT');
-    input.setAttribute('size', '2');
-    cell.appendChild(input)
-    var value = bytes[(y * TABLE_WIDTH) + x];
-    input.value = value;
-    input.setAttribute('data-orig-value', value);
-    input.oninput = onChangeListener;
-    if (!(value in CELL_MAPPING)) {
-    	CELL_MAPPING[value] = [];
-    }
-    CELL_MAPPING[value].push(input);   
-  }
+window.onload = function() {
+	
+	var table = document.getElementById("code_table")
+
+	for (y = 0; y < TABLE_HEIGHT; y++) {
+		var row = table.insertRow(y);
+	  for (x = 0; x < TABLE_WIDTH; x++) {
+		var cell = row.insertCell(x);
+	    var input = document.createElement('INPUT');
+	    input.setAttribute('size', '2');
+	    cell.appendChild(input)
+	    var value = bytes[(y * TABLE_WIDTH) + x];
+	    input.value = value;
+	    input.setAttribute('data-orig-value', value);
+	    input.oninput = onChangeListener;
+	    if (!(value in CELL_MAPPING)) {
+		CELL_MAPPING[value] = [];
+	    }
+	    CELL_MAPPING[value].push(input);   
+	  }
+	}
+
 }
