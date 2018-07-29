@@ -26,17 +26,14 @@ window.onload = function() {
             var idx = (y * TABLE_WIDTH) + x;
             if (idx <= 376) {
                 var value = bytes[idx];
-
-            } else {
-                var value = idx;
+                input.value = value;
+                input.setAttribute('data-orig-value', value);
+                input.oninput = onChangeListener;
+                if (!(value in CELL_MAPPING)) {
+                    CELL_MAPPING[value] = [];
+                }
+                CELL_MAPPING[value].push(input);
             }
-            input.value = value;
-            input.setAttribute('data-orig-value', value);
-            input.oninput = onChangeListener;
-            if (!(value in CELL_MAPPING)) {
-                CELL_MAPPING[value] = [];
-            }
-            CELL_MAPPING[value].push(input);
         }
     }
 
