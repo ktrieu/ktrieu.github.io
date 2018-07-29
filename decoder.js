@@ -20,7 +20,7 @@ window.onload = function() {
         var row = table.insertRow(y);
         for (x = 0; x < TABLE_WIDTH; x++) {
             var idx = (y * TABLE_WIDTH) + x;
-            if (idx <= 376) {
+            if (idx < 376) {
                 var cell = row.insertCell(x);
                 var input = document.createElement('INPUT');
                 input.setAttribute('size', '2');
