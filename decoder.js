@@ -7,8 +7,8 @@ CELL_MAPPING = {};
 
 var onChangeListener = function(e) {
 	var orig = e.target.getAttribute('data-orig-value');
-  for (var cell in CELL_MAPPING[orig]) {
-  	cell.value = e.target.value;
+  for (var i = 0; i < CELL_MAPPING[orig].length; i++) {
+  	CELL_MAPPING[orig][i].value = e.target.value;
   }
 }
 
