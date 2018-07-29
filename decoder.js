@@ -19,12 +19,12 @@ window.onload = function() {
     for (y = 0; y < TABLE_HEIGHT; y++) {
         var row = table.insertRow(y);
         for (x = 0; x < TABLE_WIDTH; x++) {
-            var cell = row.insertCell(x);
-            var input = document.createElement('INPUT');
-            input.setAttribute('size', '2');
-            cell.appendChild(input);
             var idx = (y * TABLE_WIDTH) + x;
             if (idx <= 376) {
+                var cell = row.insertCell(x);
+                var input = document.createElement('INPUT');
+                input.setAttribute('size', '2');
+                cell.appendChild(input);
                 var value = bytes[idx];
                 input.value = value;
                 input.setAttribute('data-orig-value', value);
