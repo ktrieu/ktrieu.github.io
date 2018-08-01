@@ -5,11 +5,34 @@ TABLE_HEIGHT = 19
 
 CELL_MAPPING = {};
 
-var onChangeListener = function(e) {
+onChangeListener = function (e) {
     var orig = e.target.getAttribute('data-orig-value');
     for (var i = 0; i < CELL_MAPPING[orig].length; i++) {
-        CELL_MAPPING[orig][i].value = e.target.value;
+        cell = CELL_MAPPING[orig][i]
+        cell.value = e.target.value;
+        cell.style.backgroundColor = "white";
     }
+}
+
+toggleBorder = function (border, e) {
+    var orig = e.target.getAttribute('data-orig-value');
+    for (var i = 0; i < CELL_MAPPING[orig].length; i++) {
+        cell = CELL_MAPPING[orig][i]
+        if (border == true) {
+            cell.style.border = "2px solid yellow";
+        }
+        else {
+            cell.style.border = "";
+        }
+    }
+}
+
+onFocusListener = function (e) {
+    toggleBorder(true, e);
+}
+
+onBlurListener = function (e) {
+    toggleBorder(false, e);
 }
 
 window.onload = function() {
@@ -24,11 +47,15 @@ window.onload = function() {
                 var cell = row.insertCell(x);
                 var input = document.createElement('INPUT');
                 input.setAttribute('size', '2');
+                input.style.backgroundColor = "gray";
                 cell.appendChild(input);
+                cell.style.padding = "3px";
                 var value = bytes[idx];
                 input.value = value;
                 input.setAttribute('data-orig-value', value);
                 input.oninput = onChangeListener;
+                input.onfocus = onFocusListener;
+                input.onblur = onBlurListener;
                 if (!(value in CELL_MAPPING)) {
                     CELL_MAPPING[value] = [];
                 }
