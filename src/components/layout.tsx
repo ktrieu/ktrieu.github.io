@@ -25,6 +25,8 @@ const GlobalStyle = createGlobalStyle`
 	body {
 		margin: 0;
 
+		line-height: 1.5em;
+		
 		${desktopOnly`
 			font-size: 22px;
 		`}

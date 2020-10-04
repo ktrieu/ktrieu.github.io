@@ -6,8 +6,8 @@ import NavbarItem from "./item"
 
 const NavbarNav = styled.nav`
   border-bottom: 1px solid black;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 2em;
+  padding-right: 2em;
 
   display: flex;
   align-items: center;
