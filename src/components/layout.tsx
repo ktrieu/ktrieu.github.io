@@ -41,7 +41,7 @@ const Container = styled.div`
 	`};
 
   ${desktopOnly`
-		max-width: 970px;
+		max-width: 1110px;
 	`};
 `
 
