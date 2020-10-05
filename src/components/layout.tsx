@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet"
 
 import styled, { createGlobalStyle } from "styled-components"
 import { desktopOnly, mobileOnly } from "../../utils/breakpoints"
+import Footer from "./footer"
 
 import Navbar from "./navbar"
 
@@ -24,7 +25,14 @@ const GlobalStyle = createGlobalStyle`
 	}
 `
 
+const App = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
 const Container = styled.div`
+  flex: 1;
+
   padding: 15px;
   margin-left: auto;
   margin-right: auto;
@@ -48,8 +56,11 @@ const Layout: React.FC = props => {
         />
       </Helmet>
       <GlobalStyle />
-      <Navbar />
-      <Container>{props.children}</Container>
+      <App>
+        <Navbar />
+        <Container>{props.children}</Container>
+        <Footer />
+      </App>
     </>
   )
 }

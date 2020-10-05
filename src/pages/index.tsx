@@ -112,7 +112,6 @@ const Main: React.FC = () => {
           experience={data.secretMissionExperience.childMarkdownRemark}
         />
       </BodyContainer>
-      <Contact />
     </Layout>
   )
 }
