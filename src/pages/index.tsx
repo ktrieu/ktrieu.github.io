@@ -6,10 +6,12 @@ import { graphql, Link, useStaticQuery } from "gatsby"
 import Contact from "../components/contact"
 import { desktopOnly, mobileOnly } from "../../utils/breakpoints"
 import Img, { FixedObject } from "gatsby-image"
+import Experience, { ExperienceQuery } from "../components/experience"
 
 const IntroContainer = styled.div`
   ${desktopOnly`
     display: flex;
+    margin: 0 -1em;
   `}
 `
 const IntroCol = styled.div`
@@ -33,6 +35,12 @@ interface MainPageQuery {
       fixed: FixedObject
     }
   }
+  setterExperience: {
+    childMarkdownRemark: ExperienceQuery
+  }
+  secretMissionExperience: {
+    childMarkdownRemark: ExperienceQuery
+  }
 }
 
 const Main: React.FC = () => {
@@ -43,6 +51,16 @@ const Main: React.FC = () => {
           fixed(width: 500, height: 500, quality: 100) {
             ...GatsbyImageSharpFixed
           }
+        }
+      }
+      setterExperience: file(relativePath: { eq: "setter.md" }) {
+        childMarkdownRemark {
+          ...Experience
+        }
+      }
+      secretMissionExperience: file(relativePath: { eq: "secret-mission.md" }) {
+        childMarkdownRemark {
+          ...Experience
         }
       }
     }
@@ -72,6 +90,12 @@ const Main: React.FC = () => {
           <Img fixed={data.introImage.childImageSharp.fixed} />
         </IntroCol>
       </IntroContainer>
+      <h1>Experience</h1>
+      <Experience experience={data.setterExperience.childMarkdownRemark} />
+      <hr />
+      <Experience
+        experience={data.secretMissionExperience.childMarkdownRemark}
+      />
       <Contact />
     </Layout>
   )
