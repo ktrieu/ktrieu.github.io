@@ -21,13 +21,15 @@ const GlobalStyle = createGlobalStyle`
 		
 		${desktopOnly`
 			font-size: 22px;
-		`}
+    `}
+    
 	}
 `
 
 const App = styled.div`
   display: flex;
   flex-direction: column;
+  height: 100vh;
 `
 
 const Container = styled.div`

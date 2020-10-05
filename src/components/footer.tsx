@@ -5,6 +5,7 @@ import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa"
 import styled from "styled-components"
 
 const FooterContainer = styled.footer`
+  margin-top: auto;
   padding: 1.5em 2em;
 
   display: flex;
