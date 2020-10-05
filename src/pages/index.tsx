@@ -13,20 +13,34 @@ const IntroContainer = styled.div`
     display: flex;
     margin: 0 -1em;
   `}
+
+  margin-bottom: 2em;
 `
 const IntroCol = styled.div`
   flex: 50%;
-  padding: 0 1em;
 
-  .hide-mobile {
+  ${desktopOnly`
+    padding: 0 1em;
+  `}
+
+  &.hide-mobile {
     ${mobileOnly`
-      display: none
+      display: none;
     `}
   }
 `
 
 const IntroHello = styled.p`
   font-size: 56px;
+`
+
+const BodyContainer = styled.div`
+  ${desktopOnly`
+    max-width: 800px;
+  `}
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em;
 `
 
 interface MainPageQuery {
@@ -90,12 +104,14 @@ const Main: React.FC = () => {
           <Img fixed={data.introImage.childImageSharp.fixed} />
         </IntroCol>
       </IntroContainer>
-      <h1>Experience</h1>
-      <Experience experience={data.setterExperience.childMarkdownRemark} />
-      <hr />
-      <Experience
-        experience={data.secretMissionExperience.childMarkdownRemark}
-      />
+      <BodyContainer>
+        <h1>Experience</h1>
+        <Experience experience={data.setterExperience.childMarkdownRemark} />
+        <hr />
+        <Experience
+          experience={data.secretMissionExperience.childMarkdownRemark}
+        />
+      </BodyContainer>
       <Contact />
     </Layout>
   )
