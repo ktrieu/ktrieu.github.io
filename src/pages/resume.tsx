@@ -4,8 +4,9 @@ import Layout from "../components/layout"
 import styled from "styled-components"
 
 const PdfFrame = styled.iframe`
-  width: 100vh;
-  height: 90vh;
+  margin: 0 calc(50% - 50vw);
+  width: 100vw;
+  height: 100%;
 `
 
 const Resume: React.FC = () => {
