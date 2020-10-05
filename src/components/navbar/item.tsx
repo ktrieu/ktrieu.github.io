@@ -13,7 +13,7 @@ const ItemLink = styled(Link)`
   text-decoration: none;
   color: inherit;
 
-  .link-active {
+  &.link-active {
     text-decoration: underline;
   }
 
