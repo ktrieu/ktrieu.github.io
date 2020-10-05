@@ -21,8 +21,7 @@ export interface ExperienceQuery {
   html: string
 }
 
-const ExperienceEmployer = styled.h2`
-  font-family: "Aleo";
+const ExperienceEmployer = styled.h3`
   margin-bottom: 0.5em;
 `
 

@@ -13,15 +13,6 @@ const GlobalStyle = createGlobalStyle`
 		font-family: "Aleo";
 	}
 
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		font-family: "Bebas Neue";
-	}
-
 	body {
 		margin: 0;
 
@@ -52,7 +43,7 @@ const Layout: React.FC = props => {
     <>
       <Helmet>
         <link
-          href="https://fonts.googleapis.com/css2?family=Aleo:ital@0;1&family=Bebas+Neue&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&display=swap"
           rel="stylesheet"
         />
       </Helmet>
