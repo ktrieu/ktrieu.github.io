@@ -10,15 +10,22 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `experience-data`,
+        path: `${__dirname}/src/experience-data`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `experience-data`,
-        path: `${__dirname}/src/experience-data`,
+        name: `projects-data`,
+        path: `${__dirname}/src/projects-data`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
     `gatsby-transformer-remark`,

@@ -17,6 +17,7 @@ const Navbar: React.FC = () => {
   return (
     <NavbarNav>
       <NavbarBrand />
+      <NavbarItem to="/projects" text="Projects" />
       <NavbarItem to="/resume" text="Resume" />
     </NavbarNav>
   )
