@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{UTyF:function(e,n,a){"use strict";a.r(n);var t=a("q1tI"),c=a.n(t),i=a("9Dj+"),o=a("vOnD").b.iframe.withConfig({displayName:"resume__PdfFrame",componentId:"sc-1bobx6n-0"})(["margin:-15px calc(50% - 50vw);width:100vw;height:calc(100% + 30px);"]);n.default=function(){return c.a.createElement(i.a,null,c.a.createElement(o,{src:"https://drive.google.com/file/d/1N5NAYh3aPssIx_jIQS7ZojGSXI_mxoI1/preview"}))}}}]);
+//# sourceMappingURL=component---src-pages-resume-tsx-28ae606f7ed82aecb0af.js.map
