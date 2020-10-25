@@ -87,6 +87,7 @@ export const sparqlQuery = async (concepturi: string) => {
 
 export interface NotableFigure {
   name: string
+  description: string
   birth: Date
   death?: Date
   image: string
@@ -105,6 +106,7 @@ export const searchFigures = async (
         const binding = query.data.results.bindings[0]
         return {
           name: result.label,
+          description: result.description,
           birth: new Date(binding.birth.value),
           death: binding.death && new Date(binding.death.value),
           image: binding.image.value,
