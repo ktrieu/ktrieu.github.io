@@ -12,6 +12,8 @@ import { NotableFigure, searchFigures } from "./api"
 
 const SuggestionContainer = styled.div`
   width: 100%;
+  margin-bottom: 1em;
+
   ul {
     margin-top: 0;
     list-style-type: none;
