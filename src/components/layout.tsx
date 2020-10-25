@@ -23,7 +23,14 @@ const GlobalStyle = createGlobalStyle`
 			font-size: 22px;
     `}
     
-	}
+  }
+  
+  input {
+    font-family: "Aleo";
+    ${desktopOnly`
+			font-size: 22px;
+    `}
+  }
 `
 
 const App = styled.div`

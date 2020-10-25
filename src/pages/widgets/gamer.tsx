@@ -14,7 +14,9 @@ import Autosuggest, {
 } from "react-autosuggest"
 
 const SuggestionContainer = styled.div`
+  width: 100%;
   ul {
+    margin-top: 0;
     list-style-type: none;
     padding-left: 0;
   }
@@ -29,10 +31,19 @@ const renderSuggestionContainer: RenderSuggestionsContainer = params => {
 }
 
 const SuggestionDiv = styled.div`
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1;
   border: 1px solid black;
-  padding: 10px;
+  padding: 5px 10px;
+
+  p {
+    min-width: 100%;
+    width: min-content;
+  }
+
+  p small {
+    font-size: 12px;
+  }
 `
 
 const renderSuggestion: RenderSuggestion<NotableFigure> = (suggestion, _) => {
@@ -49,6 +60,8 @@ const renderSuggestion: RenderSuggestion<NotableFigure> = (suggestion, _) => {
 // The inputProps override the styled components one, so we have to be a little clever
 const StyledInput = styled.input`
   width: 100%;
+  margin-bottom: 0;
+  box-sizing: border-box;
 `
 
 const renderInput: RenderInputComponent<NotableFigure> = inputProps => {
@@ -56,11 +69,11 @@ const renderInput: RenderInputComponent<NotableFigure> = inputProps => {
   return <StyledInput {...(inputProps as any)} />
 }
 
-const GamerContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+const GamerHeader = styled.h1`
+  font-size: 38px;
+  text-align: center;
 `
+
 const GamerWidget = () => {
   const [suggestValue, setSuggestValue] = useState<string>("")
   const [suggestions, setSuggestions] = useState<NotableFigure[]>([])
@@ -81,9 +94,7 @@ const GamerWidget = () => {
 
   return (
     <Layout>
-      <GamerContainer>
-        <h1>Were They A Gamer?</h1>
-      </GamerContainer>
+      <GamerHeader>Were They A Gamer?</GamerHeader>
       <Autosuggest
         suggestions={suggestions}
         getSuggestionValue={(suggestion: NotableFigure) => suggestion.name}
