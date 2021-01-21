@@ -4,6 +4,9 @@ import Layout from "../components/layout"
 import Project, { ProjectQuery } from "../components/project"
 
 interface ProjectsQuery {
+  polytope: {
+    childMarkdownRemark: ProjectQuery
+  }
   slugline: {
     childMarkdownRemark: ProjectQuery
   }
@@ -15,6 +18,11 @@ interface ProjectsQuery {
 const Projects = () => {
   const data = useStaticQuery<ProjectsQuery>(graphql`
     query {
+      polytope: file(relativePath: { eq: "polytope.md" }) {
+        childMarkdownRemark {
+          ...Project
+        }
+      }
       slugline: file(relativePath: { eq: "slugline.md" }) {
         childMarkdownRemark {
           ...Project
@@ -30,6 +38,8 @@ const Projects = () => {
 
   return (
     <Layout>
+      <Project project={data.polytope.childMarkdownRemark} />
+      <hr/>
       <Project project={data.slugline.childMarkdownRemark} />
       <hr />
       <Project project={data.electoralCodex.childMarkdownRemark} />
