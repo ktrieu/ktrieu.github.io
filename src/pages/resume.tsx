@@ -12,7 +12,7 @@ const PdfFrame = styled.iframe`
 const Resume: React.FC = () => {
   return (
     <Layout>
-      <PdfFrame src="https://drive.google.com/file/d/1N5NAYh3aPssIx_jIQS7ZojGSXI_mxoI1/preview" />
+      <PdfFrame src="https://drive.google.com/file/d/1t-Rx9NisITrVkqrURXABYb0cj4NstYPD/preview" />
     </Layout>
   )
 }
